@@ -1,14 +1,10 @@
 #include "API/ARK/Ark.h"
 
-#include "PluginTemplate.h"
+#include "TameChangeColor.h"
 
 #include "Utils.h"
 
-#include "RepairItems.h"
-
-#include "Hooks.h"
-
-#include "Timers.h"
+#include "ChangeColor.h"
 
 #include "Commands.h"
 
@@ -21,14 +17,12 @@
 
 void OnServerReady()
 {
-	Log::GetLog()->info("PluginTemplate Initialized");
+	Log::GetLog()->info("TameChangeColor Initialized");
 
 	ReadConfig();
 	LoadDatabase();
 	AddOrRemoveCommands();
 	AddReloadCommands();
-	SetTimers();
-	SetHooks();
 }
 
 DECLARE_HOOK(AShooterGameMode_BeginPlay, void, AShooterGameMode*);
@@ -55,6 +49,4 @@ extern "C" __declspec(dllexport) void Plugin_Unload()
 
 	AddOrRemoveCommands(false);
 	AddReloadCommands(false);
-	SetTimers(false);
-	SetHooks(false);
 }

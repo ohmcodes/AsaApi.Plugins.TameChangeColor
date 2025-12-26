@@ -1,40 +1,32 @@
 {
   "General": {
-    "Debug": true,
-    "IgnoreInvRepairRequirements": true
+    "Debug": false
   },
   "Debug": {
-    "PluginTemplate": true,
-    "Permissions": true,
-    "Points": true
+    "Permissions": false,
+    "Points": false
   },
   "Commands": {
-    "RepairItemCMD": "/repairitems",
-    "DeletePlayerCMD": "/deleteplayer"
+    "ColorDinoCMD": "/cd",
+    "ColorDinoAOECMD": "/cda",
+    "CopyColorDinoCMD": "/ccd",
+    "ApplyCopiedColorDinoCMD": "/accd",
+    "ApplyCopiedColorDinoAOECMD": "/accda"
   },
   "Messages": {
     "RepairItemsMSG": "All items has been repaired. {}",
     "PermErrorMSG": "You don't have permission to use this command.",
-    "PointsErrorMSG": "Not enough points."
+    "PointsErrorMSG": "Not enough points.",
+    "ColorDinoMSG": "Dino color has been changed!",
+    "ColorDinoAoeMSG": "Dino in range color has been changed!",
+    "CopyColorDinoMSG": "Color dino has been copied.",
+    "ApplyCopiedColorDinoMSG": "Copied color applied.",
+    "ApplyCoppiedColorAoeMSG": "Copied color applied to all dino in range."
   },
   "DiscordBot": {
-    "GuildID": "",
-    "ChannelID": "",
-    "BotToken": "",
+    "Enabled": false,
     "Webhook": "",
     "BotImageURL": ""
-  },
-  "PluginDBSettings": {
-    "UseMySQL": false,
-    "Host": "",
-    "User": "",
-    "Password": "",
-    "Database": "",
-    "TableName": "PluginTemplate",
-    "Port": 3306,
-    "MysqlSSLMode": -1,
-    "MysqlTLSVersion": "",
-    "SQLiteDatabasePath": ""
   },
   "PermissionsDBSettings": {
     "Enabled": false,
@@ -74,8 +66,26 @@
     "Admins": {
       "Priority": 1,
       "Commands": {
-        "RepairItemCMD": {
+        "ColorDinoCMD": {
           "Enabled": false,
+          "Cost": 0
+        },
+        "ColorDinoAOECMD": {
+          "Enabled": false,
+          "AoeMaxRange": 5000,
+          "Cost": 0
+        },
+        "CopyColorDinoCMD": {
+          "Enabled": false,
+          "Cost": 0
+        },
+        "ApplyCopiedColorDinoCMD": {
+          "Enabled": false,
+          "Cost": 0
+        },
+        "ApplyCopiedColorDinoAOECMD": {
+          "Enabled": false,
+          "AoeMaxRange": 5000,
           "Cost": 0
         }
       }

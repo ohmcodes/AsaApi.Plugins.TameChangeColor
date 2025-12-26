@@ -1,41 +1,46 @@
 {
   "General": {
-    "Debug": true,
-    "IgnoreInvRepairRequirements": true
+    "Debug": true
   },
   "Debug": {
-    "PluginTemplate": true,
     "Permissions": true,
     "Points": true
   },
   "Commands": {
-    "RepairItemCMD": "/repairitems",
-    "DeletePlayerCMD": "/deleteplayer"
+
+    /*sample command: /cd  1-15,2-25,3-13 */
+    /* for 1-15 example 1 is the body index and 15 is the color number*/
+    /*body index and colors are separated by quoma for easy execution*/
+    "ColorDinoCMD": "/cd",
+    /* example /cda rex 1-15,2-25,3-13 5000 */
+    /* where 5000 is the radius range */
+    /* just leave space /cda [notice space here replaces rex] 1-15,2-25,3-13 if you want all dinos within specified range */
+    /* leave 5000 as blank if you want server maximum range */
+    "ColorDinoAOECMD": "/cda",
+    /* copy color via targeted dino*/
+    "CopyColorDinoCMD": "/ccd",
+    /* pasting color either target or AOE */
+    "ApplyCopiedColorDinoCMD": "/accd",
+    /* example /accda rex 5000 */
+    /* just leave space /accda [notice space here replaces rex] 5000 if you want all dinos within specified range */
+    "ApplyCopiedColorDinoAOECMD": "/accda"
   },
   "Messages": {
     "RepairItemsMSG": "All items has been repaired. {}",
     "PermErrorMSG": "You don't have permission to use this command.",
-    "PointsErrorMSG": "Not enough points."
+    "PointsErrorMSG": "Not enough points.",
+    "ColorDinoMSG": "Dino color has been changed!",
+    "ColorDinoAoeMSG": "Dino in range color has been changed!",
+    "CopyColorDinoMSG": "Color dino has been copied.",
+    "ApplyCopiedColorDinoMSG": "Copied color applied.",
+    "ApplyCoppiedColorAoeMSG": "Copied color applied to all dino in range."
   },
   "DiscordBot": {
-    "GuildID": "",
-    "ChannelID": "",
-    "BotToken": "",
+    "Enabled": true,
     "Webhook": "",
     "BotImageURL": ""
   },
-  "PluginDBSettings": {
-    "UseMySQL": false,
-    "Host": "",
-    "User": "",
-    "Password": "",
-    "Database": "",
-    "TableName": "PluginTemplate",
-    "Port": 3306,
-    "MysqlSSLMode": -1,
-    "MysqlTLSVersion": "",
-    "SQLiteDatabasePath": ""
-  },
+  /* cant be disabled for now as it is required */
   "PermissionsDBSettings": {
     "Enabled": false,
     "UseMySQL": false,
@@ -51,6 +56,7 @@
     "MysqlTLSVersion": "",
     "SQLiteDatabasePath": ""
   },
+  /* cant be disabled for now as it is required */
   "PointsDBSettings": {
     "Enabled": false,
     "UseMySQL": false,
@@ -74,8 +80,28 @@
     "Admins": {
       "Priority": 1,
       "Commands": {
-        "RepairItemCMD": {
-          "Enabled": false,
+        "ColorDinoCMD": {
+          "Enabled": true,
+          "Cost": 0
+        },
+        "ColorDinoAOECMD": {
+          "Enabled": true,
+          "AoeMaxRange": 5000,
+          /* the cost is per dino */
+          "Cost": 0
+        },
+        "CopyColorDinoCMD": {
+          "Enabled": true,
+          "Cost": 0
+        },
+        "ApplyCopiedColorDinoCMD": {
+          "Enabled": true,
+          "Cost": 0
+        },
+        "ApplyCopiedColorDinoAOECMD": {
+          "Enabled": true,
+          "AoeMaxRange": 5000,
+          /* the cost is per dino */
           "Cost": 0
         }
       }

@@ -6,14 +6,12 @@
 
 #include "Requests.h"
 
-namespace PluginTemplate
+namespace TameChangeColor
 {
 	inline nlohmann::json config;
 	inline bool isDebug{ false };
 
 	inline int counter = 0;
-
-	inline std::unique_ptr<IDatabaseConnector> pluginTemplateDB;
 
 	inline std::unique_ptr<IDatabaseConnector> permissionsDB;
 
@@ -22,5 +20,8 @@ namespace PluginTemplate
 	static API::Requests& req = API::Requests::Get();
 
 	inline std::string lastMessageID;
+
+	inline APrimalDinoCharacter* CopiedColorDino;
+	inline TMap<int, int> CopiedColor;
 
 }
