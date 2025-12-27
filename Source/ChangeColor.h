@@ -269,7 +269,7 @@ void TargetCopyColorDinoCallBack(AShooterPlayerController* pc, FString* param, i
 void TargetApplyColorDinoCallBack(AShooterPlayerController* pc, FString* param, int, int)
 {
     auto perms = GetPriorPermByEOSID(pc->GetEOSId());
-    auto command = GetCommandString(perms.ToString(), "ApplyColorDinoCMD");
+    auto command = GetCommandString(perms.ToString(), "ApplyCopiedColorDinoCMD");
 
     if (command.is_null() || (!command.is_null() && !command.value("Enabled", false)))
     {
@@ -335,7 +335,7 @@ void TargetApplyColorDinoCallBack(AShooterPlayerController* pc, FString* param, 
 void AoeApplyColorDinoCallBack(AShooterPlayerController* pc, FString* param, int, int)
 {
     auto perms = GetPriorPermByEOSID(pc->GetEOSId());
-    auto command = GetCommandString(perms.ToString(), "ApplyColorDinoAoeCMD");
+    auto command = GetCommandString(perms.ToString(), "ApplyCopiedColorDinoAOECMD");
 
     if (command.is_null() || (!command.is_null() && !command.value("Enabled", false)))
     {
